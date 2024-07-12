@@ -1,0 +1,46 @@
+.animalButton {
+  background-color: lightgray;
+  border: solid 5px black;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+}
+
+.bee {
+  background-image: url("./assets/images/bee.png");
+}
+
+.cat {
+  background-image: url("./assets/images/cat.png");
+}
+
+.cow {
+  background-image: url("./assets/images/cow.png");
+}
+
+.ducky {
+  background-image: url("./assets/images/ducky.png");
+}
+
+.hen {
+  background-image: url("./assets/images/hen.png");
+}
+
+.horse {
+  background-image: url("./assets/images/horse.png");
+}
+
+.lion {
+  background-image: url("./assets/images/lion.png");
+}
+.owl {
+  background-image: url("./assets/images/owl.png");
+}
+.parrot {
+  background-image: url("./assets/images/parrot.png");
+}
+
+.pig {
+  background-image: url("./assets/images/pig.png");
+}
