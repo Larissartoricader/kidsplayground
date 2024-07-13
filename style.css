@@ -11,20 +11,40 @@
   background-image: url("./assets/images/bee.png");
 }
 
+.bird {
+  background-image: url("./assets/images/bird.png");
+}
+
 .cat {
   background-image: url("./assets/images/cat.png");
+}
+
+.chick {
+  background-image: url("./assets/images/chick.png");
 }
 
 .cow {
   background-image: url("./assets/images/cow.png");
 }
 
+.dolphin {
+  background-image: url("./assets/images/dolphin.png");
+}
+
 .ducky {
   background-image: url("./assets/images/ducky.png");
 }
 
+.donkey {
+  background-image: url("./assets/images/donkey.png");
+}
+
 .hen {
   background-image: url("./assets/images/hen.png");
+}
+
+.hippo {
+  background-image: url("./assets/images/hippo.png");
 }
 
 .horse {
@@ -34,13 +54,32 @@
 .lion {
   background-image: url("./assets/images/lion.png");
 }
+
+.monkey {
+  background-image: url("./assets/images/monkey.png");
+}
 .owl {
   background-image: url("./assets/images/owl.png");
 }
 .parrot {
   background-image: url("./assets/images/parrot.png");
 }
+.penguin {
+  background-image: url("./assets/images/penguin.png");
+}
 
 .pig {
   background-image: url("./assets/images/pig.png");
+}
+
+.shark {
+  background-image: url("./assets/images/shark.png");
+}
+
+.sheep {
+  background-image: url("./assets/images/sheep.png");
+}
+
+.tiger {
+  background-image: url("./assets/images/tiger.png");
 }
