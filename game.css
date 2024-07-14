@@ -1,0 +1,40 @@
+.game-container {
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.animal-container {
+  display: flex;
+  gap: 50px;
+}
+
+.game-box {
+  background-color: red;
+  background-color: lightgray;
+  border: solid 5px black;
+  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+}
+
+.animal1 {
+  background-image: url("./assets/images/bee.png");
+}
+
+.animal2 {
+  background-image: url("./assets/images/cat.png");
+}
+
+.start-button {
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  border: solid 5px white;
+  border-radius: 50px;
+}
