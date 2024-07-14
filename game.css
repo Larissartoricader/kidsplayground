@@ -14,7 +14,7 @@
 }
 
 .game-box {
-  background-color: red;
+  background-color: lightgray;
   background-color: lightgray;
   border: solid 5px black;
   border-radius: 10px;
@@ -24,11 +24,19 @@
 }
 
 .animal1 {
-  background-image: url("./assets/images/bee.png");
+  background-image: url("./assets/images/question-mark.png");
 }
 
 .animal2 {
-  background-image: url("./assets/images/cat.png");
+  background-image: url("./assets/images/question-mark.png");
+}
+
+.rightAnswer {
+  background-color: green;
+}
+
+.wrongAnswer {
+  background-color: red;
 }
 
 .start-button {
