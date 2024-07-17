@@ -112,7 +112,7 @@ function addConfetti(element) {
     element.appendChild(confetti);
   }
 
-  // Resete Confetti
+  // Reset Confetti
   setTimeout(() => {
     const confettiElements = element.querySelectorAll(".confetti");
     confettiElements.forEach((confetti) => confetti.remove());
