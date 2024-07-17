@@ -31,9 +31,10 @@ let animalSecret = "";
 function resetall() {
   animalOne.classList.remove("rightAnswer", "wrongAnswer");
   animalTwo.classList.remove("rightAnswer", "wrongAnswer");
+  animalOne.style.backgroundImage = "";
+  animalTwo.style.backgroundImage = "";
 }
-
-startGame.addEventListener("click", () => {
+function handleStartGame() {
   //reset Background-Colors:
   resetall();
 
@@ -51,12 +52,16 @@ startGame.addEventListener("click", () => {
   //Random selections of animals pictures
 
   const animalSecretIndex = Math.floor(Math.random() * animals.length);
-  const animalSecret = animals[animalSecretIndex];
+  animalSecret = animals[animalSecretIndex];
   console.log("The Right Answer " + animalSecret);
   rightButton.style.backgroundImage = `url(./assets/images/${animalSecret}.png)`;
 
   const animalRandomIndex = Math.floor(Math.random() * animals.length);
-  const animalRandom = animals[animalRandomIndex];
+  let animalRandom = animals[animalRandomIndex];
+  while (animalRandom === animalSecret) {
+    animalRandomIndex = Math.floor(Math.random() * animals.length);
+    animalRandom = animals[animalRandomIndex];
+  }
   console.log("The Wrong Answer " + animalRandom);
   wrongButton.style.backgroundImage = `url(./assets/images/${animalRandom}.png)`;
 
@@ -71,31 +76,24 @@ startGame.addEventListener("click", () => {
   }, 2000);
 
   //Answer Checking Button One
-  animalOne.addEventListener("click", () =>
-    handleClick(animalOne, animalSecret)
-  );
-  //Answer Checking Button Two
-  animalTwo.addEventListener("click", () =>
-    handleClick(animalTwo, animalSecret)
-  );
-});
+  animalOne.removeEventListener("click", handleClick);
+  animalTwo.removeEventListener("click", handleClick);
+  animalOne.addEventListener("click", () => handleClick(animalOne));
+  animalTwo.addEventListener("click", () => handleClick(animalTwo));
+}
 
-function handleClick(animalElement, animalSecret) {
+function handleClick(animalElement) {
   const style = getComputedStyle(animalElement);
   const backgroundImage = style.backgroundImage;
 
-  // Extração do URL da imagem usando regex
   const urlPattern = /url\("?(.+?)"?\)/;
   const match = backgroundImage.match(urlPattern);
   const imageUrl = match ? match[1] : null;
 
   if (imageUrl) {
-    // Extrai o nome do arquivo com extensão
     const fileNameWithExtension = imageUrl.split("/").pop();
-    // Remove a extensão para obter apenas o nome do arquivo
     const fileNameWithoutExtension = fileNameWithExtension.split(".")[0];
 
-    // Verifica se o nome do arquivo corresponde ao animalSecret
     if (fileNameWithoutExtension === animalSecret) {
       animalElement.classList.add("rightAnswer");
     } else {
@@ -103,3 +101,6 @@ function handleClick(animalElement, animalSecret) {
     }
   }
 }
+
+//Start Game with Click
+startGame.addEventListener("click", handleStartGame);
