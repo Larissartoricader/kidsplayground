@@ -17,8 +17,8 @@
   background-color: lightgray;
   border: solid 5px black;
   border-radius: 10px;
-  width: 120px;
-  height: 120px;
+  width: 300px;
+  height: 300px;
   background-size: cover;
 }
 
@@ -32,16 +32,112 @@
 
 .rightAnswer {
   background-color: green;
+  position: relative;
+  overflow: hidden;
 }
+
+.rightAnswer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  animation: confetti 1s ease-in-out infinite;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(300px) rotate(180deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(600px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.rightAnswer .confetti {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  animation: confetti 1s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(600px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Additional styles for multiple confetti pieces */
+.rightAnswer .confetti:nth-child(2) {
+  background-color: blue;
+  left: 60%;
+  animation-delay: 0.1s;
+}
+
+.rightAnswer .confetti:nth-child(3) {
+  background-color: yellow;
+  left: 40%;
+  animation-delay: 0.2s;
+}
+
+.rightAnswer .confetti:nth-child(4) {
+  background-color: pink;
+  left: 70%;
+  animation-delay: 0.3s;
+}
+
+.rightAnswer .confetti:nth-child(5) {
+  background-color: orange;
+  left: 30%;
+  animation-delay: 0.4s;
+}
+
+/* ... add more confetti pieces as needed */
 
 .wrongAnswer {
   background-color: red;
 }
 
 .start-button {
-  height: 50px;
-  width: 50px;
-  background-color: black;
-  border: solid 5px white;
+  height: 100px;
+  width: 100px;
+  background-color: #f57c1f;
+  border: solid 5px black;
   border-radius: 50px;
+  font-size: x-large;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.start-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  .game-box {
+    width: 120px;
+    height: 120px;
+  }
 }

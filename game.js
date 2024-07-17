@@ -96,10 +96,32 @@ function handleClick(animalElement) {
 
     if (fileNameWithoutExtension === animalSecret) {
       animalElement.classList.add("rightAnswer");
+      addConfetti(animalElement);
     } else {
       animalElement.classList.add("wrongAnswer");
     }
   }
+}
+// add Confetti
+function addConfetti(element) {
+  for (let i = 0; i < 20; i++) {
+    const confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+    confetti.style.left = `${Math.random() * 100}%`;
+    confetti.style.backgroundColor = getRandomColor();
+    element.appendChild(confetti);
+  }
+
+  // Resete Confetti
+  setTimeout(() => {
+    const confettiElements = element.querySelectorAll(".confetti");
+    confettiElements.forEach((confetti) => confetti.remove());
+  }, 1000);
+}
+
+function getRandomColor() {
+  const colors = ["red", "blue", "yellow", "pink", "orange", "purple"];
+  return colors[Math.floor(Math.random() * colors.length)];
 }
 
 //Start Game with Click

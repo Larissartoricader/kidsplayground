@@ -1,12 +1,15 @@
 :root {
-  --primary-color: #e4003a;
-  --secondary-color: #eb5b00;
-  --accent-color: #e4003a;
-  --background-color: #ffb200;
+  --primary-color: #dd1a22;
+  --secondary-color: #f57c1f;
+  --accent-color: #e95ea2;
+  --background-color: #fecd04;
+  --black-color: #000000;
+  --grey-color: #878c8f;
 }
 
 body {
   background-color: var(--background-color);
+  position: relative;
 }
 .homepage-container {
   display: flex;
@@ -28,19 +31,51 @@ body {
   width: 100px;
   border: solid 5px var(--accent-color);
   border-radius: 10px;
-  transition: width 0.2s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  background-size: cover;
+}
+.sounds {
+  background-image: url("/assets/icons/sounds.png");
+}
+.game {
+  background-image: url("/assets/icons/game.png");
 }
 
 .nav-button:hover {
   background-color: var(--primary-color);
   cursor: pointer;
-  width: 3000%;
+  transform: scale(1.1) rotate(2deg);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .nav-button a {
   color: whitesmoke;
   font-size: 1.5rem;
+  text-decoration: none;
 }
+
+.back-button {
+  background-color: var(--accent-color);
+
+  height: 60px;
+  width: 100px;
+  position: absolute;
+  top: 10px;
+  font-size: medium;
+  color: var(--background-color);
+  border: solid 2px var(--primary-color);
+  border-radius: 20px;
+  transition: width 0.3s ease-in-out;
+}
+.back-button:hover {
+  background-color: var(--primary-color);
+  cursor: pointer;
+  transform: scale(1.1) rotate(2deg);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 .animals-boxes {
   display: flex;
   flex-wrap: wrap;
@@ -51,8 +86,8 @@ body {
   background-color: lightgray;
   border: solid 5px black;
   border-radius: 10px;
-  width: 120px;
-  height: 120px;
+  width: 300px;
+  height: 300px;
   background-size: cover;
 }
 
@@ -131,4 +166,15 @@ body {
 
 .tiger {
   background-image: url("./assets/images/tiger.png");
+}
+
+@media (max-width: 600px) {
+  .animalButton {
+    width: 100px;
+    height: 100px;
+  }
+  .back-button {
+    width: 70px;
+    height: 30px;
+  }
 }
